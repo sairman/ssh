@@ -68,23 +68,14 @@ nano /etc/sysctl.conf
 
 sysctl -p
 iptables -t nat -I POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
-nano /etc/iptables8.conf
-
-iptables -t nat -I POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
-
+echo "iptables -t nat -I POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE" > /etc/iptables8.conf
 iptables-save > /etc/iptables8.conf
-nano /etc/network/if-up.d/iptables
-
-#!/bin/sh
+echo "#!/bin/sh
 iptables-restore < /etc/iptables8.conf
-iptables-restore < /etc/iptables9.conf
-
+iptables-restore < /etc/iptables9.conf " > /etc/network/if-up.d/iptables
 chmod +x /etc/network/if-up.d/iptables
 iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE
-nano /etc/iptables9.conf
-
-iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE
-
+echo "iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE" > /etc/iptables9.conf
 iptables-save > /etc/iptables9.conf
 mkdir clientconfig
 cp /etc/openvpn/easy-rsa/2.0/keys/{ca.crt,ta.key} clientconfig/
