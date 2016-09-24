@@ -4,7 +4,7 @@ cd /etc/openvpn/easy-rsa/2.0
 source ./vars
 ./clean-all
 ./build-ca
-echo "sairman"
+
 ./build-dh
 ./build-key-server server01
 
@@ -27,3 +27,4 @@ iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE
 echo "iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE" > /etc/iptables9.conf
 iptables-save > /etc/iptables9.conf
 nano /etc/openvpn/easy-rsa/2.0/keys/ca.crt
+service openvpn restart
