@@ -4,7 +4,7 @@ cd /etc/openvpn/easy-rsa/2.0
 source ./vars
 ./clean-all
 ./build-ca
-
+echo "sairman"
 ./build-dh
 ./build-key-server server01
 
