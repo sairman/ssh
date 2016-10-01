@@ -9,3 +9,7 @@ apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtim
 apt-get -f install -y
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
+apt-get install -y squid3
+mv squid.conf squid.conf.bak
+curl https://raw.githubusercontent.com/sairman/ssh/master/squid.conf > /etc/squid3/squid.conf
+nano /etc/squid3/squid.conf
