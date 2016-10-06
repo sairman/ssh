@@ -16,5 +16,3 @@ update-rc.d vpnserver defaults
 /etc/init.d/vpnserver start
 cd /usr/local/vpnserver/
 ./vpncmd
-check
-exit
