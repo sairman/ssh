@@ -1,4 +1,5 @@
 #!/bin/bash
+wget -qO- ipv4.icanhazip.com
 IP=$(wget -qO- ipv4.icanhazip.com)
 apt-get install openvpn -y
 cp -a /usr/share/doc/openvpn/examples/easy-rsa /etc/openvpn/
@@ -27,6 +28,8 @@ iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE
 echo "iptables -t nat -I POSTROUTING -s 10.9.0.0/24 -o eth0 -j MASQUERADE" > /etc/iptables9.conf
 iptables-save > /etc/iptables9.conf
 mkdir clientconfig
+wget -qO- ipv4.icanhazip.com
+IP=$(wget -qO- ipv4.icanhazip.com)
 cp /etc/openvpn/easy-rsa/2.0/keys/{ca.crt,ta.key}
 curl https://raw.githubusercontent.com/sairman/ssh/master/client-udp.conf > /etc/openvpn/clientconfig/client-udp.ovpn
 curl https://raw.githubusercontent.com/sairman/ssh/master/client-tcp.ovpn > /etc/openvpn/clientconfig/client-tcp.ovpn
