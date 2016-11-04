@@ -30,11 +30,13 @@ mkdir clientconfig
 cp /etc/openvpn/easy-rsa/2.0/keys/{ca.crt,ta.key}
 curl https://raw.githubusercontent.com/sairman/ssh/master/client-udp.conf > /etc/openvpn/clientconfig/client-udp.ovpn
 curl https://raw.githubusercontent.com/sairman/ssh/master/client-tcp.ovpn > /etc/openvpn/clientconfig/client-tcp.ovpn
+sed -i "s|;http-proxy ip 80|;http-proxy $IP 80|" /etc/openvpn/clientconfig/client-udp.ovpn
 sed -i "s|remote ip 1194|remote $IP 1194|" /etc/openvpn/clientconfig/client-udp.ovpn
 sed -i "s|;http-proxy 1194|;http-proxy $IP 1194|" /etc/openvpn/clientconfig/client-udp.ovpn
 echo "<ca>" >> /etc/openvpn/clientconfig/client-udp.ovpn
 cat /etc/openvpn/easy-rsa/2.0/keys/ca.crt >> /etc/openvpn/clientconfig/client-udp.ovpn
 echo "</ca>" >> /etc/openvpn/clientconfig/client-udp.ovpn
+sed -i "s|;http-proxy ip 80|;http-proxy $IP 80|" /etc/openvpn/clientconfig/client-tcp.ovpn
 sed -i "s|remote ip 55|$IP 55|" /etc/openvpn/clientconfig/client-tcp.ovpn
 sed -i "s|;http-proxy 55|;http-proxy $IP 55|" /etc/openvpn/clientconfig/client-tcp.ovpn
 echo "<ca>" >> /etc/openvpn/clientconfig/client-tcp.ovpn
