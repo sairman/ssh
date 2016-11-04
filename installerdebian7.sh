@@ -17,6 +17,7 @@ service webmin restart
 apt-get install -y squid3
 mv squid.conf squid.conf.bak
 curl https://raw.githubusercontent.com/sairman/ssh/master/squid.conf > /etc/squid3/squid.conf
+sed -i "s|acl SSH dst ip/255.255.255.255|acl SSH dst $IP/255.255.255.255|" /etc/squid3/squid.conf
 IP=$(wget -qO- ipv4.icanhazip.com)
 apt-get install openvpn -y
 cp -a /usr/share/doc/openvpn/examples/easy-rsa /etc/openvpn/
@@ -60,7 +61,7 @@ cat /etc/openvpn/easy-rsa/2.0/keys/ca.crt >> /etc/openvpn/clientconfig/client-tc
 echo "</ca>" >> /etc/openvpn/clientconfig/client-tcp.ovpn
 apt-get install zip -y
 cd /etc/openvpn/clientconfig/
-zip VPN.zip *
+zip vpn.zip *
 cd
 service openvpn restart
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -83,3 +84,7 @@ chown -R www-data:www-data /home/vps/public_html
 service nginx start
 service php-fpm start
 service fail2ban restart
+cd
+mv /etc/openvpn/clientconfig/vpn.zip /home/vps/public_html/
+mv /etc/openvpn/clientconfig/client-udp.ovpn /home/vps/public_html/
+mv /etc/openvpn/clientconfig/client-tcp.ovpn /home/vps/public_html/
