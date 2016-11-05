@@ -2,11 +2,9 @@
 # Script auto create trial user SSH
 # yg akan expired dalam hitungan menit/jam
 # www.fb.com/sairman.saja
-wget -qO- ipv4.icanhazip.com
 IP=$(wget -qO- ipv4.icanhazip.com)
 Login=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 Pass=`</dev/urandom tr -dc a-f0-9 | head -c10`
-IP=`ifconfig eth0:0| awk 'NR==2 {print $2}'| awk -F: '{print $2}'`
 useradd -s /bin/false -M $Login && echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 echo -e "Username: $Login"
