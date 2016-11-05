@@ -7,3 +7,5 @@ chmod +x openvpn.sh
 ./openvpn.sh
 chmod +x installerwebserver.sh
 sh installerwebserver.sh
+cp /etc/openvpn/clientconfig/client-udp.ovpn /home/vps/public_html
+cp /etc/openvpn/clientconfig/client-tcp.ovpn /home/vps/public_html
