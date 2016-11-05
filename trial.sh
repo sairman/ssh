@@ -15,4 +15,4 @@ echo -e "maksimal login 3 bitvise/plink"
 echo -e "1 akun hanya untuk 1 user"
 echo -e "Tidak boleh login lbh dr 1 pc/android atau login bersamaan antara pc dan android"
 echo -e ""
-sleep 3600 && skill -KILL -u $Login && userdel --force $Login && minggat | grep $Login | awk {'print$2'} | sed 's/.$//' | sed 's/^....//' > /tmp/logout && P$
+sleep 1800 && skill -KILL -u $Login && userdel --force $Login && minggat | grep $Login | awk {'print$2'} | sed 's/.$//' | sed 's/^....//' > /tmp/logout && PID=`cat /tmp/logout` && kill -9 $PID &> /dev/null &
