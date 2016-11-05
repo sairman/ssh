@@ -12,3 +12,5 @@ cp /etc/openvpn/clientconfig/client-tcp.ovpn /home/vps/public_html
 cd /usr/bin
 curl https://raw.githubusercontent.com/sairman/ssh/master/cek-user.sh > cek
 chmod +x cek
+wget https://raw.githubusercontent.com/sairman/ssh/master/trial
+chmod +x trial
