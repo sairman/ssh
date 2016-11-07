@@ -17,8 +17,3 @@ curl https://raw.githubusercontent.com/sairman/ssh/master/cek-user.sh > cek
 chmod +x cek
 wget https://raw.githubusercontent.com/sairman/ssh/master/trial
 chmod +x trial
-rm softether.sh
-rm installerfinal.sh
-rm installerwebserver.sh
-rm installerwebmin.sh
-rm openvpn.sh
