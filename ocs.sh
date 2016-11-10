@@ -23,3 +23,7 @@ git init
 git remote add origin https://github.com/sairman/ocs-panel.git
 git pull origin master
 mysql -u root -p
+CREATE DATABASE IF NOT EXISTS OCS_PANEL;EXIT;
+chmod 777 /home/vps/public_html/config
+chmod 777 /home/vps/public_html/config/config.ini
+chmod 777 /home/vps/public_html/config/route.ini
