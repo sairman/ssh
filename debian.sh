@@ -50,3 +50,8 @@ cp /etc/openvpn/clientconfig/client-udp.ovpn /home/vps/public_html
 cp /etc/openvpn/clientconfig/client-tcp.ovpn /home/vps/public_html
 echo "0 */8 * * * root /sbin/reboot" > /etc/cron.d/reboot
 service cron restart
+cd /usr/bin
+curl https://raw.githubusercontent.com/sairman/ssh/master/cek > cek
+curl https://raw.githubusercontent.com/sairman/ssh/master/trial > trial
+curl https://raw.githubusercontent.com/sairman/ssh/master/fitur.sh > fitur
+cd
