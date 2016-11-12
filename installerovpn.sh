@@ -49,5 +49,6 @@ apt-get install zip -y
 cd /etc/openvpn/clientconfig/
 zip VPN.zip *
 cd
+nano /etc/openvpn/server.conf
 nano /etc/openvpn/server1.conf
 service openvpn restart
