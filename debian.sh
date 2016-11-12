@@ -66,4 +66,4 @@ service dropbear restart
 service openvpn restart
 service vpnserver restart
 cp /etc/openvpn/clientconfig/client-udp.ovpn /home/vps/public_html
-cp /etc/openvpn/clientconfig/client-udp.ovpn /home/vps/public_html
+cp /etc/openvpn/clientconfig/client-tcp.ovpn /home/vps/public_html
