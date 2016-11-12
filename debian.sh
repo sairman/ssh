@@ -54,4 +54,7 @@ cd /usr/bin
 curl https://raw.githubusercontent.com/sairman/ssh/master/cek > cek
 curl https://raw.githubusercontent.com/sairman/ssh/master/trial > trial
 curl https://raw.githubusercontent.com/sairman/ssh/master/fitur.sh > fitur
+chmod +x cek
+chmod +x trial
+chmod +x fitur
 cd
