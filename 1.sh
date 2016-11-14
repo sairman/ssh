@@ -36,7 +36,7 @@ service php5-fpm restart
 service nginx restart
 apt-get -y install fail2ban;service fail2ban restart
 chown -R www-data:www-data /home/vps/public_html
-curl https://raw.githubusercontent.com/sairman/ssh/master/installerovpn.sh > openvpn.sh
+curl https://raw.githubusercontent.com/sairman/ssh/master/installerovpn.sh > 2.sh
 chmod +x openvpn.sh
 ./openvpn.sh
 apt-get install build-essential -y
@@ -67,3 +67,23 @@ service openvpn restart
 service vpnserver restart
 cp /etc/openvpn/clientconfig/client-udp.ovpn /home/vps/public_html
 cp /etc/openvpn/clientconfig/client-tcp.ovpn /home/vps/public_html
+echo "0 */12 * * * root /sbin/reboot" > /etc/cron.d/reboot
+service cron restart
+cd /usr/bin
+curl https://raw.githubusercontent.com/sairman/ssh/master/buat > buat
+curl https://raw.githubusercontent.com/sairman/ssh/master/gusur > gusur
+curl https://raw.githubusercontent.com/sairman/ssh/master/siapa > siapa
+curl https://raw.githubusercontent.com/sairman/ssh/master/trial > trial
+curl https://raw.githubusercontent.com/sairman/ssh/master/minggat > minggat
+curl https://raw.githubusercontent.com/sairman/ssh/master/renew > renew
+curl https://raw.githubusercontent.com/sairman/ssh/master/akun > akun
+curl https://raw.githubusercontent.com/sairman/ssh/master/fitur > fitur
+chmod +x buat
+chmod +x gusur
+chmod +x siapa
+chmod +x trial
+chmod +x minggat
+chmod +x renew
+chmod +x akun
+chmod +x fitur
+cd
