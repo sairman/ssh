@@ -2,7 +2,7 @@
 # Hehehe cocok untuk berjualan SSH & VPN
 # Ingin sekedar ngobrol? Email aja ke fb.com/vps.termurahh
 echo "--------------------------MEMBUAT AKUN SSH TUNNEL BARU-------------------------"
-echo -e "                                \e[1;33;44m[ by ari-f.com ]\e[0m"
+echo -e "                                \e[1;33;44m[ by fb.com/vps.termurahh ]\e[0m"
 if [ $(id -u) -eq 0 ]; then
         read -p "Isikan username baru: " username
         read -p "Berapa hari akun $username aktif: " expired
