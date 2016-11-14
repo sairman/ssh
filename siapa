@@ -1,6 +1,5 @@
 #!/bin/bash
-# www.fb.com/sairman.saja
-# 085298350285
+# www.fb.com/vps.termurahh
 ps ax | grep dropbear > /tmp/PID.txt
 cat /var/log/auth.log |  grep -i "Password auth succeeded" | awk '{print $10,"\t","\t",$12,"\t","\t",$3,$2,$1,"\t",$5;}' | sed s/.$// | column -t | sed "s/'//g" > /tmp/konek.txt
 perl -pi -e 's/dropbear/PID/g' /tmp/konek.txt
