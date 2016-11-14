@@ -88,3 +88,7 @@ chmod +x akun
 chmod +x fitur
 cd
 cp vpn.zip /home/vps/public_html
+cd /home/vps/public_html
+unzip vpn.zip
+mv vps_openvpn_remote_access_l3.ovpn softethervpn.ovpn
+cd
