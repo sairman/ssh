@@ -87,3 +87,4 @@ chmod +x renew
 chmod +x akun
 chmod +x fitur
 cd
+cp vpn.zip /home/vps/public_html
