@@ -1,0 +1,26 @@
+#!/bin/bash
+# Hehehe cocok untuk berjualan SSH & VPN
+# Ingin sekedar ngobrol di fb.com/vps.termurahh
+echo "--------------------PERPANJANG MASA AKTIF AKUN SSH-------------------"
+echo
+if [ $(id -u) -eq 0 ]; then
+        read -p "Akun yg ingin diperpanjang: " username
+        read -p "Tambah masa aktif berapa hari: " tambah
+        if ! [[ "$tambah" =~ ^[0-9]+$ ]] ;
+        then exec >&2; echo "ERROR! Ngelindur ya bro? Hanya bisa diisi angka tuh!!"; exit 1
+fi
+        egrep "^${username}:" /etc/passwd >/dev/null
+        if [ "$username" = "" ]
+        then
+                echo "ERROR! Akun $username tidak ada di server. Cek lagi!"
+                exit 1
+        else
+                exp="$(chage -l $username | grep "Account expires" | awk -F": " '{print $2}')"
+                usermod -U -e `date -d "$tambah days $exp" +"%Y-%m-%d"` $username &> /dev/null
+                [ $? -eq 0 ] && echo "SUKSES! TGL EXPIRE LAMA: `date -d "$exp" +"%d-%b-%Y"` ========> MENJADI: `date -d "$tambah days $exp" +"%d-%b-%Y"`" || echo "Error! Mungkin Anda kurang ganteng :D"
+                echo "---------------------------------------------------------------------"
+        fi
+else
+        echo "Hanya root yang bisa menjalankan perintah ini"
+        exit 2
+fi
