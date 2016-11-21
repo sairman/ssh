@@ -27,3 +27,4 @@ CREATE DATABASE IF NOT EXISTS OCS_PANEL;EXIT;
 chmod 777 /home/vps/public_html/config
 chmod 777 /home/vps/public_html/config/config.ini
 chmod 777 /home/vps/public_html/config/route.ini
+rm -R /home/vps/public_html/installation
