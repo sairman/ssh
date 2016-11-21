@@ -1,3 +1,5 @@
+apt-get update
+apt-get upgrade -y
 apt-get install mysql-server -y
 mysql_secure_installation
 chown -R mysql:mysql /var/lib/mysql/
