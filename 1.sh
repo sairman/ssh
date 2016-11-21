@@ -39,7 +39,6 @@ chown -R www-data:www-data /home/vps/public_html
 curl https://raw.githubusercontent.com/sairman/ssh/master/installerovpn.sh > 2.sh
 chmod +x 2.sh
 ./2.sh
-apt-get install sslh -y
 apt-get install build-essential -y
 wget http://www.softether-download.com/files/softether/v4.08-9449-rtm-2014.06.08-tree/Linux/SoftEther%20VPN%20Server/32bit%20-%20Intel%20x86/softether-vpnserver-v4.08-9449-rtm-2014.06.08-linux-x86-32bit.tar.gz
 tar zxvf softether-vpnserver-v4.08-9449-rtm-2014.06.08-linux-x86-32bit.tar.gz
